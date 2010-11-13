@@ -62,7 +62,7 @@ void setup()
   
   Serial.println("");
   Serial.println("Kubrick!");
-  Serial.println("       ...waiting for lock...           ");
+  Serial.println("       ...if everythings ready on the dark side of the moon...           ");
   Serial.println("");
 }
 
@@ -93,6 +93,9 @@ void getgps(TinyGPS &gps)
   float latitude, longitude;
   // Then call this function
   gps.f_get_position(&latitude, &longitude);
+
+  Serial.print("HOUSTON");
+  Serial.print(",");
   
   Serial.print(latitude, 5);
   Serial.print(",");
