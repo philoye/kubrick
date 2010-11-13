@@ -76,6 +76,7 @@ void loop()
       int c = uart_gps.read();    // load the data into a variable...
       if(gps.encode(c))      // if there is a new valid sentence...
       {
+        delay(5000); // Time until next update
         getgps(gps);         // then grab the data.
       }
   }
