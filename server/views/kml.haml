@@ -1,0 +1,21 @@
+!!! XML
+%kml{'xmlns' => 'http://www.opengis.net/kml/2.2'}
+  %Document
+    %name Kubrick Launch
+    %Style{:id => "yellowLineGreenPoly"}
+      %LineStyle
+        %color 7f00ffff
+        %width 4
+      %PolyStyle
+        %color 7f00ff00
+    %Placemark
+      %name Balloon Path
+      %description Some summary info about the launch?
+      %styleUrl #yellowLineGreenPoly
+      %LineString
+        %extrude 1
+        %tessellate 1
+        %altitudeMode absolute
+        %coordinates
+          - @path.each do |point|
+            = [point.lat, point.lng, point.alt].join(',')

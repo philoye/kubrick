@@ -1,0 +1,11 @@
+source :rubygems
+
+gem 'bson'
+gem 'bson_ext'
+gem 'mongoid'
+gem 'sinatra'
+gem 'haml', :require => ['haml', 'sass']
+gem 'shotgun'
+gem 'thin'
+
+
