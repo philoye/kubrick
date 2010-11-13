@@ -18,7 +18,7 @@ class BalloonReceiver
   end
 
   def serial_port
-    @serial_port ||= SerialPort.new(0, 115200, 8, 1, SerialPort::NONE)
+    @serial_port ||= SerialPort.new(port, baudrate, bitlength, stopbit, SerialPort::NONE)
   end
 
   def go
@@ -46,7 +46,7 @@ class BalloonReceiver
   end
   
   def log
-    @f ||= File.new("./log/launch-#{Time.now.strftime("%Y%m%d%H%M%S")}.log", "w")    
+    @f ||= File.new("./log/launch-#{Time.now.strftime("%Y%m%d%H%M%S")}.log", "w")
   end
 end
   
