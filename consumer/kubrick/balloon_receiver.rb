@@ -22,11 +22,20 @@ class BalloonReceiver
   end
 
   def go
+    buffer = ""
+    
     begin
       while true do
         log.write(c = serial_port.getc)
+        
+        buffer += c
+    
         if c == "\n"
-          log.flush 
+          log.flush
+          
+          BalloonFix.create_from_csv(buffer)
+          
+          buffer = "" 
         end
       end
 

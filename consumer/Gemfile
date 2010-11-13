@@ -1,6 +1,7 @@
 source :rubygems
 
-# gem 'bson_ext'
-# gem 'mongoid'
+gem 'bson'
+gem 'bson_ext'
+gem 'mongoid'
 gem 'serialport'
-# gem 'fastercsv'
+gem 'fastercsv'
