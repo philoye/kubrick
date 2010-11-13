@@ -28,7 +28,6 @@
 // Here are the lines of code that point to those libraries.
 #include <NewSoftSerial.h>
 #include <TinyGPS.h>
-#include <aJSON.h>
 
 // Define which pins you will use on the Arduino to communicate with your 
 // GPS. In this case, the GPS module's TX pin will connect to the 
@@ -62,7 +61,7 @@ void setup()
   uart_gps.begin(GPSBAUD);
   
   Serial.println("");
-  Serial.println("GPS Shield QuickStart Example Sketch v12");
+  Serial.println("Kubrick!");
   Serial.println("       ...waiting for lock...           ");
   Serial.println("");
 }
@@ -98,20 +97,23 @@ void getgps(TinyGPS &gps)
   Serial.print(latitude, 5);
   Serial.print(",");
   Serial.print(longitude, 5);
+  Serial.print(",");
   
   // Same goes for date and time
   int year;
   byte month, day, hour, minute, second, hundredths;
   gps.crack_datetime(&year,&month,&day,&hour,&minute,&second,&hundredths);
 
+  unsigned long date, time;
+
+  gps.get_datetime(&date, &time);
+  
   // Print data and time
   Serial.print(year);
   Serial.print(month, DEC);
   Serial.print(day, DEC);
-  Serial.print(hour, DEC);
-  Serial.print(minute, DEC); 
-  Serial.print(second, DEC); 
-  Serial.print(hundredths, DEC);
+  Serial.print(",");
+  Serial.print(time);
   Serial.print(",");
 
   Serial.print(gps.f_altitude());  
