@@ -4,6 +4,11 @@ Bundler.require
 
 require './../consumer/kubrick/balloon_fix'
 
+Dir.glob("./lib/*.rb") do |filename|
+  require_relative filename
+end
+  
+
 file_name = File.join(File.dirname(__FILE__), "..", "config", "mongoid.yml")
 @settings = YAML.load(ERB.new(File.new(file_name).read).result)
 
@@ -21,6 +26,8 @@ end
 
 get '/' do
   @last_fix = BalloonFix.last
+  @launch = BalloonFix.first
+  @distance = distance(@last_fix,@launch,"km")
   haml :index
 end
 
