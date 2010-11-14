@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+!!! XML
+%kml{'xmlns' => 'http://www.opengis.net/kml/2.2'}
+  %Document
+    %name Kubrick Launch Network
+    %NetworkLink{:id => "ID"}
+      %name Balloon
+      %flyToView 1
+      %Link
+        %href http://0.0.0.0:3000/launch.kml
+        %refreshMode onInterval
+        %refreshInterval 5
+        %viewRefreshMode never
+        %viewRefreshTime 5
+        %viewFormat

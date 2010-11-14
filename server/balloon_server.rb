@@ -24,6 +24,11 @@ get '/' do
   haml :index
 end
 
+get '/network.kml' do
+  headers "Content-Type" => "application/vnd.google-earth.kml+xml"
+  haml :network, :layout => false
+end
+
 get '/launch.kml' do
   headers "Content-Type" => "application/vnd.google-earth.kml+xml"
   @path = BalloonFix.all
