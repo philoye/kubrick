@@ -2,7 +2,6 @@ require 'bundler'
 Bundler.setup
 Bundler.require
 
-
 require './../consumer/kubrick/balloon_fix'
 
 file_name = File.join(File.dirname(__FILE__), "..", "config", "mongoid.yml")
@@ -26,7 +25,7 @@ get '/' do
 end
 
 get '/launch.kml' do
-  mime_type 'application/vnd.google-earth.kml+xml'
+  headers "Content-Type" => "application/vnd.google-earth.kml+xml"
   @path = BalloonFix.all
   haml :kml, :layout => false
 end
