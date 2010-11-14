@@ -20,4 +20,4 @@
         %altitudeMode absolute
         %coordinates
           - @path.each do |point|
-            = [point.lat, point.lng, point.alt].join(',')
+            = [point.lng, point.lat, point.alt].join(',')
