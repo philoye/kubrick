@@ -1,0 +1,110 @@
+@import "reset";
+
+$dark: #4D4D4D;
+$medium: #777;
+$light: #fff;
+
+
+html {
+  background: #010101;
+}
+
+body {
+  width: 970px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: "Myriad", "Myriad Pro", helvetica, arial, sans-serif;
+}
+
+h1, h2 {
+  color: $medium;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+  h2 {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+header {
+  margin: 20px 0 20px 20px;
+  border-bottom: 1px solid $dark;
+  position: relative;
+  height: 30px;
+
+  #status {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 380px;
+    text-align: none;
+
+    h2 {
+      float: left;
+      margin-right: 10px;
+    }
+    li {
+      position: relative;
+      top: -9px;
+      float: left;
+      margin-right: 10px;
+      font-size: 22px;
+      text-transform: uppercase;
+      list-style: disc;
+      color: red;
+      margin-left: 1em;
+      &.online {
+        color: green;
+      }
+      &.offline {
+        color: red;
+      }
+      span {
+        font-size: 11px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+article {
+  overflow: hidden;
+
+  section {
+    clear: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .panel {
+    float: left;
+    width: 170px;
+    margin-right: 20px;
+    &.double {
+      width: 360px;
+    }
+
+    p {
+      font-size: 36px;
+      height: 36px;
+      
+      span {
+        font-size: 18px;
+      }
+    }
+
+  }
+  
+}
+
+#altitude-graph, #map {
+  color: #111;
+  height: 170px;
+  width: 950px;
+  background-color: $dark;
+}
+#map {
+  height: 500px;
+}

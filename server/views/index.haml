@@ -1,1 +1,64 @@
-%p Latitude is #{@last_fix.lat}, Longitude is #{@last_fix.lng}, and altitude is #{@last_fix.alt}
+!!! 5
+%html
+  %head
+    %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8' }
+    %title Kubrick
+    %link{:rel=>"stylesheet", :href=>"/kubrick.css"}
+
+  %body
+    #container
+      %header
+        %h1 Kubrick Mission Control
+        #status
+          %h2 Connection status
+          %ul
+            %li.online 
+              %span Balloon
+            %li.online
+              %span Team
+      %article
+        %section
+          .panel#time-elapsed
+            %h2 Mission Clock
+            %p 5:23
+
+          .panel#time-launch
+            %h2 Launch time
+            %p 08:23am
+
+          .panel#time-current
+            %h2 Current time
+            %p 12:23pm
+
+          .panel#altitude-current
+            %h2 Altitude
+            %p #{@last_fix.alt.to_i}m
+
+          .panel#altitude-peak
+            %h2 Peak
+            %p= @last_fix.alt.to_i
+
+        %section
+          #altitude-graph
+            Altitude graph goes here
+          
+        %section
+          .panel.double#location
+            %h2 Location
+            %p= @last_fix.lat + ", " + @last_fix.lng
+
+          .panel#distance
+            %h2 Distance
+            %p #{@distance.to_i}km
+
+          .panel#course
+            %h2 Course
+            %p #{@last_fix.course.to_i}°
+
+          .panel#speed
+            %h2 Speed
+            %p= @last_fix.speed.to_i
+        
+        %section
+          #map
+            map goes here
