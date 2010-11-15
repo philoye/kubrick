@@ -31,13 +31,13 @@ get '/' do
   haml :index
 end
 
-get '/network.kml' do
+get '/kubrick.kml' do
   headers "Content-Type" => "application/vnd.google-earth.kml+xml"
-  haml :network, :layout => false
+  haml :'kubrick.kml', :layout => false
 end
 
-get '/launch.kml' do
+get '/mission.kml' do
   headers "Content-Type" => "application/vnd.google-earth.kml+xml"
   @path = BalloonFix.all
-  haml :kml, :layout => false
+  haml :'mission.kml', :layout => false
 end
