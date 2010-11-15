@@ -36,7 +36,7 @@
 
           .panel#altitude-peak
             %h2 Peak
-            %p= @last_fix.alt.to_i
+            %p –
 
         %section
           #altitude-graph
@@ -62,3 +62,9 @@
         %section
           #map
             map goes here
+
+    %script{:src=>"/jquery-1.4.2.min.js"}
+    %script{:src=>"/raphael-min.js"}
+    %script{:src=>"/g.raphael-min.js"}
+    %script{:src=>"/g.line-min.js"}
+    %script{:src=>"/kubrick.js"}

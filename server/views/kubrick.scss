@@ -100,11 +100,12 @@ article {
 }
 
 #altitude-graph, #map {
+  border-bottom: 1px solid $dark;
   color: #111;
   height: 170px;
   width: 950px;
-  background-color: $dark;
 }
 #map {
   height: 500px;
+  background-color: $dark;
 }

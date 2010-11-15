@@ -5,6 +5,7 @@ end
 
 desc "Compile coffeescript and SCSS files"
 task :compile do
-  Thread.new { `coffee -w -c -o public views/kubrick.coffee` }
+  # We're not using coffee at the moment...
+  # Thread.new { `coffee -w -c -o public views/kubrick.coffee` }
   Thread.new { `sass --watch views/kubrick.scss:public/kubrick.css --scss --load-path views --style compressed --no-cache` }.join
 end
